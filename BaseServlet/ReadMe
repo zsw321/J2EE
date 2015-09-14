@@ -1,0 +1,1 @@
+1.baseservlet.java简单的实现了通过一个Servlet调用多个请求响应方法，其中主要使用了反射方法。
