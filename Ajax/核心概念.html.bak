@@ -4,4 +4,4 @@
 在谷歌的搜索框中输入关键字时，JavaScript会将这些字符发送给服务器 ，然后服务器会返回一个搜索建议的列表。
 
 二、实现Ajax相关的对象
-  1.XMLHttpRequest:
+  1.XMLHttpRequest
