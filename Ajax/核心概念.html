@@ -1,7 +1,98 @@
 一、概述
-  Ajax : Asynchronous JavaScript And XML，为了让我们创建更好、更快、更友好的Web应用程序。传统的网页若需更新内容，需要加载
-整个网页（验证码应该属于例外），Ajax可以通过与服务器进行少量的数据交换，更新网页部分内容，最终实现网页的异步更新，例如：
-在谷歌的搜索框中输入关键字时，JavaScript会将这些字符发送给服务器 ，然后服务器会返回一个搜索建议的列表。
+  Ajax : Asynchronous JavaScript And XML，为了让我们创建更好、更快、更友好的Web应用程序。传统的网页若需更新内容，需要加载整个网页（验证码应该属于例外），Ajax可以通过与服务器进行少量的数据交换，更新网页部分内容，最终实现网页的异步更新，例如：在谷歌的搜索框中输入关键字时，JavaScript会将这些字符发送给服务器 ，然后服务器会返回一个搜索建议的列表。
 
-二、实现Ajax相关的对象
-  1.XMLHttpRequest:
+二、Ajax发生异步请求四部曲
+  1.得到XMLHttpRequest对象；
+	>大多数浏览器支持：var xmlHttp = new XMLHttpRequest();
+	>IE6.0：var xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+	>IE5.5以及更早的版本的IE：var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+	#编写创建XMLHttpRequest对象的函数
+	function createXMLHttpRequest(){
+		try{
+			return new XMLHttpRequest();
+		}catch(e){
+			try{
+				return new ActiveXObject("Msxml2.XMLHTTP");
+			}catch(e){
+				try{
+					return new ActiveXObject("Microsoft.XMLHTTP");
+				}catch(e){
+					alert("Error");
+					throw e;
+				}
+			}
+		}
+	}
+
+  2.第二步（打开与服务器的连接）
+	# xmlHttp.open():用来打开与服务器的连接，需要3个参数：
+	>请求方式；Get或Post；
+	>请求的URL：指定服务器的资源，如：/project/AServlet
+	>请求是否为异步：true,异步，否则同步
+	  xmlHttp.open("GET", "/project/AServlet", true);
+
+  3.第三步（发送请求）
+	# xmlHttp.send(null)：如果不给参数可能会造成部分浏览器无法发送
+	>参数：请求他内容！如果为GET请求，须给出null。
+
+  4.第四步
+	# 在xmlHttp对象的一个事件上注册监听器：onreadystatechange
+	# xmlHttp共有5个状态：
+	> 0：刚创建，还没有调用open方法；
+	> 1：请求开始，调用了open方法，没有调用send()方法；
+	> 2：调用了send()方法；
+	> 3：服务器开始响应，但不表示响应结束；
+	> 4：服务器响应结束。
+
+	# 获取xmlHttp对象的状态：var state = xmlHttp.readystate;
+	# 获取服务器响应的状态码：var status = xmlHttp.status;
+	# 获取服务器响应的内容：
+	> var context = xmlHttp.responseText;  //服务器响应的文本格式内容
+	> var context = xmlHttp.responseXML;   //服务器响应的xml内容，是个document对象
+
+	xmlHttp.onreadystatechange = function(){
+		if(xmlHttp.readystate == 4 && xmlHttp.status == 200){
+			var text = xmlHttp.responseText;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
