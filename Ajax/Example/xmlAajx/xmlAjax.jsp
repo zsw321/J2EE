@@ -50,6 +50,17 @@ window.onload = function() {//文档加载完毕后执行
 				// 获取服务器的响应结束
 				var doc = xmlHttp.responseXML;
 				
+				/×
+				<students>
+					<student number='zsw321'>
+						<name>zsw</name>
+						<age>18</age>
+						<male>Boy</male>
+					</student>
+				</students>
+				×/
+				
+				
 				//查询文档下student的所有元素，取下表0元素
 				var ele = doc.getElementsByTagName("student")[0];
 				var number = ele.getAttribute("number");
