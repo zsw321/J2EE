@@ -1,5 +1,5 @@
 
-###JavaScript####
+//JavaScript
 <script type="text/javascript">
 // 创建异步对象
 function createXMLHttpRequest() {
@@ -127,14 +127,14 @@ window.onload = function() {//文档加载完毕后执行
 
 
 <body>
-	  <h1>省市联动</h1>
+	<h1>省市联动</h1>
 		
-		<select name="province" id="p">
-			<option>======请选择省======</option>
-		</select>
+	<select name="province" id="p">
+		<option>======请选择省======</option>
+	</select>
 							
-		<select name="city" id="c">
-			<option>======请选择市======</option>
-		</select>
+	<select name="city" id="c">
+		<option>======请选择市======</option>
+	</select>
 	
- 	</body>
+ </body>
