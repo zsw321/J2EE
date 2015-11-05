@@ -1,0 +1,16 @@
+#这章节手动练习了一个Servlet与Jsp联合的例子#
+#以下是心得体会#
+
+1.请求页面与结果显示页面不是直接建立在WebRoot目录下，而是在其下面建立了多级目录，
+  如请求页面绝对路径为：/WebRoot/Servlet&Jsp/ThirdChapter/Form.html及
+  结果显示页面绝对路径为：/WebRoot/Servlet&Jsp/ThirdChapter/result.html
+  
+  在Form.html中，表单的提交 method为Post， action其中的Servlet路径 应加上项目名称，例 "/ProjectName/ServletName"
+  假如Form.html在WebRoot目录下， action 可以 直接为 "ServletName"
+  
+2.在处理请求的Servlet中，假如只有doPost()方法，不能直接在浏览器通过 /ProjectName/ServletName 方式访问Servlet，因为
+  这样方法默认是Get方法。
+  若需求对请求进行转发， 若转发的页面不在WebRoot目录下，应加上页面的绝对路径，即 
+  request.getRequestDispatcher("/Servlet&Jsp/ThirdChapter/result.jsp").forward(request, response);
+  
+  
