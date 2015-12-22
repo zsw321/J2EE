@@ -119,7 +119,6 @@ Web容器加载Servlet类 --> 初始化servlet（构造函数运行，此时仅�
     -- scriptlet： 常规的Java代码	    <%   %>
     -- 表达式：省略了out.print              <%=  %>
     -- JSP声明：声明所生成servlet类的成员   <%!  %>
-    -- EL语言：表达式语言，代替scriptlet和表达式  ${xxx}
  
     JSP注释 <%--  --%>
 	
@@ -137,8 +136,6 @@ Web容器加载Servlet类 --> 初始化servlet（构造函数运行，此时仅�
 	7.pageContext(PageContext)、  页面级作用域
 	8.exception(Throwable)、
 	9.page(Object)
-
-其中2、4、5、7属于JSP属性作用域，但可通过PageContext引用得到任意作用域的属性
 
 
 
