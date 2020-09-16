@@ -17,7 +17,7 @@ import org.apache.poi.ss.usermodel.Cell;
 
 import com.aheadsoft.mobile.services.DingService;
 
-public class test
+public class OperateExcel
 {
 	
 	public static ByteArrayOutputStream createArrayOutputStream(InputStream input)throws Exception{
@@ -95,56 +95,7 @@ public class test
 			}
 			
 			sv.commit();
-			/*
-			List<TzsbPersonXukeVo> itemList = new ArrayList<TzsbPersonXukeVo>();
-			TzsbPersonXukeVo item = null;
-
-			for (int j = 1; j <=sheet1.getLastRowNum(); j++) {
-				row = sheet1.getRow(j);
-				if (row == null) {
-					continue;
-				}
-				int cell_index = 0;
-				item = new TzsbPersonXukeVo();
-				
-				item.setName(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setSfz(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setJob(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setZsbh(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setFzbm(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setXm(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setPzrq(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setYxrq(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setPydw(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setPyxm(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setPyzq(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setDwtelephone(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setDabh(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setFddbr(StringUtil.cell_string(row.getCell(cell_index++)));
-				item.setKsjg(StringUtil.cell_string(row.getCell(cell_index++)));
-				
-				item.setCreateTime(new Date());
-				item.setCreateUser(getWebUser().getId());
-				
-				itemList.add(item);
-			}
 			
-			if("1".equals(scfstps)){
-				xk_sv.rmByTableName("t_tzsbpersonxuke");    // 先删除，后保存
-			}
-			for (TzsbPersonXukeVo tmp : itemList) {
-				xk_sv.addData(tmp);
-			}
-			
-			
-			xk_sv.commit();
-			
-		} catch (Exception e) {
-			result = "导入失败";
-			HibernateUtil.rollbackTransaction();
-			log.error(e.getMessage(), e);
-		}*/
-		
 		return result;
 	}
 	
